@@ -13,8 +13,11 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
+const port = "5000";
+const mongo_url = "mongodb+srv://rhythm_4538:rhythm4538@blogweb.d104g.mongodb.net/BLOG?retryWrites=true&w=majority";
+
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(mongo_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
